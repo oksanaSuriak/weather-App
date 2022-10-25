@@ -33,7 +33,12 @@ days.forEach(function(day){
 forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
 console.log(forecastHTML);
+
 };
+function getForecast(coordinates){
+    console.log(coordinates);
+let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key} `;
+}
 function displayTemperature(response) {
 
 let temperatureElement = document.querySelector("#temperature");
@@ -56,6 +61,8 @@ iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
+getForecast(response.data.coord)
+
 }
 function search(city) {
 let apiKey = "66c7da026329d4c2a98c508b6ddbcfb1";
